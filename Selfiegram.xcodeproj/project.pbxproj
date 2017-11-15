@@ -15,6 +15,7 @@
 		2613E7901FABE27E00667F6C /* SelfiegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2613E78F1FABE27E00667F6C /* SelfiegramTests.swift */; };
 		2613E79B1FABE27E00667F6C /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2613E79A1FABE27E00667F6C /* SelfiegramUITests.swift */; };
 		2634614B1FB28D9800FE2CCE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */; };
+		267430601FBBC622009E30F1 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */; };
 		26A053CD1FBA98E600CE6596 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CC1FBA98E600CE6596 /* User.swift */; };
 		26A053CF1FBA9D0100CE6596 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CE1FBA9D0100CE6596 /* Post.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		2613E79A1FABE27E00667F6C /* SelfiegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITests.swift; sourceTree = "<group>"; };
 		2613E79C1FABE27E00667F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		26A053CC1FBA98E600CE6596 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26A053CE1FBA9D0100CE6596 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				2613E77A1FABE27E00667F6C /* AppDelegate.swift */,
 				2613E77C1FABE27E00667F6C /* ViewController.swift */,
 				2613E77E1FABE27E00667F6C /* Main.storyboard */,
+				2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */,
 				26A053CC1FBA98E600CE6596 /* User.swift */,
 				26A053CE1FBA9D0100CE6596 /* Post.swift */,
 				2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A053CD1FBA98E600CE6596 /* User.swift in Sources */,
+				267430601FBBC622009E30F1 /* FeedTableViewController.swift in Sources */,
 				2634614B1FB28D9800FE2CCE /* ProfileViewController.swift in Sources */,
 				2613E77D1FABE27E00667F6C /* ViewController.swift in Sources */,
 				2613E77B1FABE27E00667F6C /* AppDelegate.swift in Sources */,
