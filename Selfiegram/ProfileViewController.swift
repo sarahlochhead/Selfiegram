@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+
     @IBAction func cameraButtonPressed(_ sender: Any) {
         print("Camera Button Pressed")
         // 1: Create an ImagePickerController

@@ -103,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iQU-da-d3K" id="dkx-Dd-liX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-GC-Zmb">
@@ -147,7 +147,13 @@
                             <outlet property="delegate" destination="tV0-rb-PHx" id="A3a-pa-buM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="74P-Bu-rTI"/>
+                    <navigationItem key="navigationItem" id="74P-Bu-rTI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="uTl-Wk-5Mh">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="tV0-rb-PHx" id="8Wr-1G-CdZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA3-7Z-Bvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSq-aK-Qa0" id="J9x-M3-WUZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
