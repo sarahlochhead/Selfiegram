@@ -94,12 +94,12 @@
         <scene sceneID="qXW-AU-kEq">
             <objects>
                 <tableViewController id="tV0-rb-PHx" customClass="FeedTableViewController" customModule="Selfiegram" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MFH-N8-GJi" customClass="SelfieCell">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MFH-N8-GJi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="iQU-da-d3K" customClass="Feed">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="iQU-da-d3K" customClass="SelfieTableViewCell" customModule="Selfiegram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iQU-da-d3K" id="dkx-Dd-liX">
@@ -127,14 +127,19 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="top" secondItem="dkx-Dd-liX" secondAttribute="topMargin" id="Ii3-0t-Y8R"/>
+                                        <constraint firstItem="LJb-vr-NX5" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="NvA-M7-guZ"/>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="TbH-nN-Mey"/>
-                                        <constraint firstItem="LJb-vr-NX5" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leading" constant="8" id="cAk-83-BBv"/>
                                         <constraint firstItem="LJb-vr-NX5" firstAttribute="top" secondItem="eOX-eZ-XOG" secondAttribute="bottom" id="hUh-Oa-4Zw"/>
                                         <constraint firstItem="eOX-eZ-XOG" firstAttribute="top" secondItem="UXk-GC-Zmb" secondAttribute="bottom" constant="8" id="n17-Da-DY2"/>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="trailing" secondItem="dkx-Dd-liX" secondAttribute="trailingMargin" id="nxK-ew-XPu"/>
                                         <constraint firstItem="eOX-eZ-XOG" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="q0Q-gQ-1ql"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="LJb-vr-NX5" id="dLg-7R-hQ4"/>
+                                    <outlet property="selfieImageView" destination="UXk-GC-Zmb" id="TI8-j3-8mg"/>
+                                    <outlet property="usernameLabel" destination="eOX-eZ-XOG" id="PZj-ON-FAk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

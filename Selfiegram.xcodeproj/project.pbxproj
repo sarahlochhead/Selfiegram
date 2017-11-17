@@ -18,7 +18,7 @@
 		267430601FBBC622009E30F1 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */; };
 		26A053CD1FBA98E600CE6596 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CC1FBA98E600CE6596 /* User.swift */; };
 		26A053CF1FBA9D0100CE6596 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CE1FBA9D0100CE6596 /* Post.swift */; };
-		26BE6F8E1FBE66BB00AAB6A8 /* SeflieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE6F8D1FBE66BB00AAB6A8 /* SeflieCell.swift */; };
+		26BE6F901FBE6EE700AAB6A8 /* SelfieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE6F8F1FBE6EE700AAB6A8 /* SelfieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		26A053CC1FBA98E600CE6596 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26A053CE1FBA9D0100CE6596 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		26BE6F8D1FBE66BB00AAB6A8 /* SeflieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeflieCell.swift; sourceTree = "<group>"; };
+		26BE6F8F1FBE6EE700AAB6A8 /* SelfieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,13 +111,13 @@
 				2613E77C1FABE27E00667F6C /* ViewController.swift */,
 				2613E77E1FABE27E00667F6C /* Main.storyboard */,
 				2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */,
-				26BE6F8D1FBE66BB00AAB6A8 /* SeflieCell.swift */,
 				26A053CC1FBA98E600CE6596 /* User.swift */,
 				26A053CE1FBA9D0100CE6596 /* Post.swift */,
 				2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */,
 				2613E7811FABE27E00667F6C /* Assets.xcassets */,
 				2613E7831FABE27E00667F6C /* LaunchScreen.storyboard */,
 				2613E7861FABE27E00667F6C /* Info.plist */,
+				26BE6F8F1FBE6EE700AAB6A8 /* SelfieTableViewCell.swift */,
 			);
 			path = Selfiegram;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26BE6F8E1FBE66BB00AAB6A8 /* SeflieCell.swift in Sources */,
 				26A053CD1FBA98E600CE6596 /* User.swift in Sources */,
 				267430601FBBC622009E30F1 /* FeedTableViewController.swift in Sources */,
+				26BE6F901FBE6EE700AAB6A8 /* SelfieTableViewCell.swift in Sources */,
 				2634614B1FB28D9800FE2CCE /* ProfileViewController.swift in Sources */,
 				2613E77D1FABE27E00667F6C /* ViewController.swift in Sources */,
 				2613E77B1FABE27E00667F6C /* AppDelegate.swift in Sources */,
