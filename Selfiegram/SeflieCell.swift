@@ -1,16 +1,15 @@
 //
-//  FeedTableViewController.swift
+//  SeflieCell.swift
 //  Selfiegram
 //
-//  Created by Sarah Lochhead on 2017-11-14.
+//  Created by Sarah Lochhead on 2017-11-16.
 //  Copyright © 2017 Sarah Lochhead. All rights reserved.
 //
 
 import UIKit
 
-class FeedTableViewController: UITableViewController {
-    
- var posts = [Post]()
+class SeflieCell: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,16 +18,6 @@ class FeedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let me = User(aUserName: "Sarah", aProfileImage: UIImage(named: "Grumpy-Cat")!)
-
-        let post0 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 0")
-        let post1 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 1")
-        let post2 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 2")
-        let post3 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 3")
-        let post4 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 4")
-
-        posts = [post0, post1, post2, post3, post4]
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,24 +28,24 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-  
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-        
-        let post = posts[indexPath.row]
-        cell.imageView?.image = post.image
-        cell.textLabel?.text = post.comment
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-   
+    */
 
     /*
     // Override to support conditional editing of the table view.
