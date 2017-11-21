@@ -96,11 +96,17 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
             let me = User(aUserName: "sam", aProfileImage: UIImage(named: "Grumpy-Cat")!)
             let post = Post(image: image, user: me, comment: "My Selfie")
 
+           //3. Add post to our posts array
+           //   Adds it to the very top of our array
+            posts.insert(post, at: 0)
             
         }
         
-        //3. We remember to dismiss the Image Picker from our screen.
+        //4. We remember to dismiss the Image Picker from our screen.
         dismiss(animated: true, completion: nil)
+        
+        //5. Now that we have added a post, reload our table
+        tableView.reloadData()
         
     }
 
