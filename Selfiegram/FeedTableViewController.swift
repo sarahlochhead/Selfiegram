@@ -14,6 +14,35 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let url = URL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=5e45a79ea897e6e4e7d6359d3c90adb2&tags=cat")!
+        
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) -> Void in
+            // convert Data to JSON
+            
+            if let jsonUnformatted = try? JSONSerialization.jsonObject(with: data!, options: []) {
+                
+                let json = jsonUnformatted as? [String : AnyObject]
+                let photosDictionary = json?["photos"] as? [String : AnyObject]
+                if let photosArray = photosDictionary?["photo"] as? [[String : AnyObject]] {
+                    for photo in photosArray {
+                        
+                        if let farmID = photo["farm"] as? Int,
+                            let serverID = photo["server"] as? String,
+                            let photoID = photo["id"] as? String,
+                            let secret = photo["secret"] as? String {
+                            
+                        }
+                    }
+                }
+            }else{
+                print("error with response data")
+            }
+        })
+        
+        task.resume()
+        
+        print ("outside dataTaskWithURL")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
