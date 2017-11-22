@@ -31,6 +31,8 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
                             let photoID = photo["id"] as? String,
                             let secret = photo["secret"] as? String {
                             
+                            let photoURLString = "https://farm\(farmID).staticflickr.com/\(serverID)/\(photoID)_\(secret).jpg"
+                            print(photoURLString)
                         }
                     }
                 }
