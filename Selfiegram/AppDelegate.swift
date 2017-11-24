@@ -25,10 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: configuration)
         
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackground(block: { (success: Bool, error: Error?) -> Void in
-            print("Object has been saved.")
+        let user = PFUser()
+        let username = "sarah"
+        let password = "yellow64"
+        user.username = username
+        user.password = password
+        user.signUpInBackground(block: { (success, error) -> Void in
+            if success {
+                print("successfully signuped a user")
+            }else {
+                PFUser.logInWithUsername(inBackground: username, password: password, block: { (user, error) -> Void in
+                    if let user = user {
+                        print("successfully logged in \(user)")
+                    }
+                })
+            }
         })
         
         return true
