@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Parse
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let configuration = ParseClientConfiguration { clientConfiguration in
+            clientConfiguration.applicationId = "vrX$Y29#nBp3&V,P"
+            clientConfiguration.server = "https://fast-crag-22688.herokuapp.com/parse"
+        }
+        Parse.initialize(with: configuration)
+        
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackground(block: { (success: Bool, error: Error?) -> Void in
+            print("Object has been saved.")
+        })
+        
         return true
     }
 
