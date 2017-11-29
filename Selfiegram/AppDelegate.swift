@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import Parse
 
 @UIApplicationMain
@@ -23,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientConfiguration.applicationId = "vrX$Y29#nBp3&V,P"
             clientConfiguration.server = "https://fast-crag-22688.herokuapp.com/parse"
         }
+        
+        Post.registerSubclass()
         Parse.initialize(with: configuration)
         
         let user = PFUser()
