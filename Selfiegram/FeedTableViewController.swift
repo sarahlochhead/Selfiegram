@@ -14,7 +14,20 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        if let query = Post.query() {
+            query.order(byDescending: "createdAt")
+            query.includeKey("user")
+            
+            query.findObjectsInBackground(block: { (posts, error) -> Void in
+                
+                if let posts = posts as? [Post]{
+                    self.posts = posts
+                    self.tableView.reloadData()
+                }
+            })
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +52,14 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
         let post = self.posts[indexPath.row]
         
         cell.selfieImageView.image = nil
+       
+        let imageFile = post.image
+        imageFile.getDataInBackground(block: {(data, error) -> Void in
+            if let data = data {
+                let image = UIImage(data: data)
+                cell.selfieImageView.image = image
+            }
+        })
         
         cell.usernameLabel.text = post.user.username
         cell.commentLabel.text = post.comment
@@ -74,7 +95,7 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    
+        
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
@@ -107,74 +128,74 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
         dismiss(animated: true, completion: nil)
         
         
-    //        // 1. When the delegate method is returned, it passes along a dictionary called info.
-    //        //    This dictionary contains multiple things that maybe useful to us.
-    //        //    We are getting an image from the UIImagePickerControllerOriginalImage key in that dictionary
-    //        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-    //
-    //            //2. To our imageView, we set the image property to be the image the user has chosen
-    //            let me = User(aUserName: "sam", aProfileImage: UIImage(named: "Grumpy-Cat")!)
-    //            let post = Post(image: image, user: me, comment: "My Selfie")
-    //
-    //           //3. Add post to our posts array
-    //           //   Adds it to the very top of our array
-    //            posts.insert(post, at: 0)
-    //
-    //        }
-    //
-    //        //4. We remember to dismiss the Image Picker from our screen.
-    //        dismiss(animated: true, completion: nil)
-    //
-    //        //5. Now that we have added a post, reload our table
-    //        tableView.reloadData()
-    //
-    //    }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
+        //        // 1. When the delegate method is returned, it passes along a dictionary called info.
+        //        //    This dictionary contains multiple things that maybe useful to us.
+        //        //    We are getting an image from the UIImagePickerControllerOriginalImage key in that dictionary
+        //        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        //
+        //            //2. To our imageView, we set the image property to be the image the user has chosen
+        //            let me = User(aUserName: "sam", aProfileImage: UIImage(named: "Grumpy-Cat")!)
+        //            let post = Post(image: image, user: me, comment: "My Selfie")
+        //
+        //           //3. Add post to our posts array
+        //           //   Adds it to the very top of our array
+        //            posts.insert(post, at: 0)
+        //
+        //        }
+        //
+        //        //4. We remember to dismiss the Image Picker from our screen.
+        //        dismiss(animated: true, completion: nil)
+        //
+        //        //5. Now that we have added a post, reload our table
+        //        tableView.reloadData()
+        //
+        //    }
+        
+        
+        /*
+         // Override to support conditional editing of the table view.
+         override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+         // Return false if you do not want the specified item to be editable.
+         return true
+         }
+         */
+        
+        /*
+         // Override to support editing the table view.
+         override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+         if editingStyle == .delete {
+         // Delete the row from the data source
+         tableView.deleteRows(at: [indexPath], with: .fade)
+         } else if editingStyle == .insert {
+         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+         }
+         }
+         */
+        
+        /*
+         // Override to support rearranging the table view.
+         override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+         
+         }
+         */
+        
+        /*
+         // Override to support conditional rearranging of the table view.
+         override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+         // Return false if you do not want the item to be re-orderable.
+         return true
+         }
+         */
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destinationViewController.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+    }
 }
