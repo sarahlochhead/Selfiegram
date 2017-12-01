@@ -15,6 +15,7 @@
 		2613E7901FABE27E00667F6C /* SelfiegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2613E78F1FABE27E00667F6C /* SelfiegramTests.swift */; };
 		2613E79B1FABE27E00667F6C /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2613E79A1FABE27E00667F6C /* SelfiegramUITests.swift */; };
 		2634614B1FB28D9800FE2CCE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */; };
+		2636F7651FD0E18700DB1403 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636F7641FD0E18700DB1403 /* Activity.swift */; };
 		267430601FBBC622009E30F1 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */; };
 		26A053CD1FBA98E600CE6596 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CC1FBA98E600CE6596 /* User.swift */; };
 		26A053CF1FBA9D0100CE6596 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A053CE1FBA9D0100CE6596 /* Post.swift */; };
@@ -59,6 +60,7 @@
 		2613E79A1FABE27E00667F6C /* SelfiegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITests.swift; sourceTree = "<group>"; };
 		2613E79C1FABE27E00667F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2634614A1FB28D9800FE2CCE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2636F7641FD0E18700DB1403 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		2674305F1FBBC622009E30F1 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		26A053CC1FBA98E600CE6596 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26A053CE1FBA9D0100CE6596 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				2613E7831FABE27E00667F6C /* LaunchScreen.storyboard */,
 				2613E7861FABE27E00667F6C /* Info.plist */,
 				26BE6F8F1FBE6EE700AAB6A8 /* SelfieTableViewCell.swift */,
+				2636F7641FD0E18700DB1403 /* Activity.swift */,
 			);
 			path = Selfiegram;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				2634614B1FB28D9800FE2CCE /* ProfileViewController.swift in Sources */,
 				2613E77D1FABE27E00667F6C /* ViewController.swift in Sources */,
 				2613E77B1FABE27E00667F6C /* AppDelegate.swift in Sources */,
+				2636F7651FD0E18700DB1403 /* Activity.swift in Sources */,
 				26A053CF1FBA9D0100CE6596 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

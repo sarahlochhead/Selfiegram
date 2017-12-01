@@ -51,18 +51,7 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
         
         let post = self.posts[indexPath.row]
         
-        cell.selfieImageView.image = nil
-       
-        let imageFile = post.image
-        imageFile.getDataInBackground(block: {(data, error) -> Void in
-            if let data = data {
-                let image = UIImage(data: data)
-                cell.selfieImageView.image = image
-            }
-        })
-        
-        cell.usernameLabel.text = post.user.username
-        cell.commentLabel.text = post.comment
+        cell.post = post
         
         return cell
     }
