@@ -103,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iQU-da-d3K" id="dkx-Dd-liX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-GC-Zmb">
@@ -124,12 +124,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-8c-B8Z">
+                                            <rect key="frame" x="336" y="266" width="23" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="chi-W3-Fw8"/>
+                                                <constraint firstAttribute="width" constant="23" id="wJv-KY-wJc"/>
+                                            </constraints>
+                                            <state key="normal" image="hearts-off"/>
+                                            <state key="selected" image="hearts-on"/>
+                                            <connections>
+                                                <action selector="likeButtonClicked:" destination="iQU-da-d3K" eventType="touchUpInside" id="WFf-Dc-dJA"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="top" secondItem="dkx-Dd-liX" secondAttribute="topMargin" id="Ii3-0t-Y8R"/>
                                         <constraint firstItem="LJb-vr-NX5" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="NvA-M7-guZ"/>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="TbH-nN-Mey"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gc7-8c-B8Z" secondAttribute="trailing" constant="8" id="TcT-Hc-uob"/>
                                         <constraint firstItem="LJb-vr-NX5" firstAttribute="top" secondItem="eOX-eZ-XOG" secondAttribute="bottom" id="hUh-Oa-4Zw"/>
+                                        <constraint firstItem="gc7-8c-B8Z" firstAttribute="top" secondItem="UXk-GC-Zmb" secondAttribute="bottom" constant="8" id="kwW-MU-NEG"/>
                                         <constraint firstItem="eOX-eZ-XOG" firstAttribute="top" secondItem="UXk-GC-Zmb" secondAttribute="bottom" constant="8" id="n17-Da-DY2"/>
                                         <constraint firstItem="UXk-GC-Zmb" firstAttribute="trailing" secondItem="dkx-Dd-liX" secondAttribute="trailingMargin" id="nxK-ew-XPu"/>
                                         <constraint firstItem="eOX-eZ-XOG" firstAttribute="leading" secondItem="dkx-Dd-liX" secondAttribute="leadingMargin" id="q0Q-gQ-1ql"/>
@@ -253,6 +267,8 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
+        <image name="hearts-on" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>

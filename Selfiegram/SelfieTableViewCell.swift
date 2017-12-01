@@ -19,6 +19,11 @@ class SelfieTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
+    @IBAction func likeButtonClicked(_ sender: UIButton) {
+         sender.isSelected = !sender.isSelected
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
