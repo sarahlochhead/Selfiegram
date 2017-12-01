@@ -45,16 +45,48 @@ class SelfieTableViewCell: UITableViewCell {
         
     }
     
-    
-    @IBAction func likeButtonClicked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     
-    
+    @IBAction func likeButtonClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        if let post = post,
+            let user = PFUser.current(){
+            if sender.isSelected {
+                post.likes.add(user)
+                
+                post.saveInBackground(block: {(success, error) -> Void in
+                    if success {
+                        print ("like from user successfully saved")
+                    }
+                    else{
+                        print ("error is \(error)")
+                    }
+                })
+            }
+            
+            else { // like button has been deselected and we should remove the like
+                
+                // PFRelation also has a useful method called removeObject that removes
+                // the element if there is an element to be removed.
+                post.likes.remove(user)
+                post.saveInBackground(block: { (success, error) -> Void in
+                    if success {
+                        print("like from user successfully removed")
+                    }else{
+                        print("error is \(error)")
+                    }
+                })
+                
+            }
+            
+            
+            
+            
+        }
+    }
 }
