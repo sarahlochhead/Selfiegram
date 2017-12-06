@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ActivityViewControllerTableViewController: UITableViewController {
 
@@ -16,7 +17,7 @@ class ActivityViewControllerTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -39,7 +40,7 @@ class ActivityViewControllerTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
         
         // get the specific activity we should configure based on where we are (indexPath.row)
         let activity = activities[indexPath.row]
@@ -53,6 +54,7 @@ class ActivityViewControllerTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if let query = Activity.query() {
             query.order(byDescending: "createdAt")
             // we need to get the details inside user (like username). so we include it in this query
