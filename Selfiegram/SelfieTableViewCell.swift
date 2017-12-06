@@ -79,14 +79,20 @@ class SelfieTableViewCell: UITableViewCell {
                 post.saveInBackground(block: {(success, error) -> Void in
                     if success {
                         print ("like from user successfully saved")
+                        
+                        // Creating an row in the Activity table
+                        // Saving it as a "like" type
+                        let activity = Activity(type: "like", post: post, user: user)
+                        activity.saveInBackground(block: { (success, error) -> Void in
+                            print("activity successfully saved")
+                        })
+
                     }
                     else{
                         print ("error is \(error)")
                     }
                 })
-            }
-                
-            else { // like button has been deselected and we should remove the like
+            } else { // like button has been deselected and we should remove the like
                 
                 // PFRelation also has a useful method called removeObject that removes
                 // the element if there is an element to be removed.
