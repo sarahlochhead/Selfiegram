@@ -15,21 +15,30 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
+            getPosts()
+        
+    }
+    
+    func getPosts() {
         if let query = Post.query() {
             query.order(byDescending: "createdAt")
             query.includeKey("user")
             
             query.findObjectsInBackground(block: { (posts, error) -> Void in
-                
+                self.refreshControl?.endRefreshing()
                 if let posts = posts as? [Post]{
                     self.posts = posts
                     self.tableView.reloadData()
                 }
+                
             })
         }
-        
     }
     
+
+    @IBAction func refreshPulled(_ sender: UIRefreshControl) {
+        getPosts()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
