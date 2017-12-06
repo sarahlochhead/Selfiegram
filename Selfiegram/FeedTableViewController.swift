@@ -14,7 +14,7 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let query = Post.query() {
             query.order(byDescending: "createdAt")
             query.includeKey("user")
