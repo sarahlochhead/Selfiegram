@@ -659,7 +659,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 170CAA70F96FDA609CBCB3C4 /* Pods-Selfiegram.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -674,7 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BD4FF305C0DF2F618449A02 /* Pods-Selfiegram.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

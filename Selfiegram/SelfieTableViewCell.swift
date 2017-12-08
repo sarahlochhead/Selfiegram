@@ -16,6 +16,8 @@ class SelfieTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
+    @IBOutlet weak var heartAnimationView: UIImageView!
+    
     var post: Post? {
         
         didSet {
@@ -57,9 +59,6 @@ class SelfieTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        
-        
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -67,6 +66,25 @@ class SelfieTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    func tapAnimation() {
+        heartAnimationView.isHidden = false
+        self.heartAnimationView.transform = CGAffineTransform(scaleX: 0, y: 0)
+
+        //animation for 1 second, no delay
+        UIView.animate(withDuration: 1.0, delay: 0, options: [], animations: { () -> Void in
+
+            // during our animation change heartAnimationView to be 3X what it is on storyboard
+            self.heartAnimationView.transform = CGAffineTransform(scaleX: 3, y: 3)
+
+        }) { (success) -> Void in
+        
+             //when animation is complete set heartAnimationView to be hidden
+            self.heartAnimationView.isHidden = true
+        }
+            likeButtonClicked(likeButton)
+    }
+    
     
     @IBAction func likeButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -86,7 +104,7 @@ class SelfieTableViewCell: UITableViewCell {
                         activity.saveInBackground(block: { (success, error) -> Void in
                             print("activity successfully saved")
                         })
-
+                        
                     }
                     else{
                         print ("error is \(error)")
@@ -127,9 +145,6 @@ class SelfieTableViewCell: UITableViewCell {
                 })
                 
             }
-            
-            
-            
             
         }
     }

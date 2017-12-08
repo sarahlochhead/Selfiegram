@@ -17,6 +17,8 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
 
             getPosts()
         
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
+        
     }
     
     func getPosts() {
@@ -36,6 +38,21 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
     }
     
 
+    @IBAction func doubleTappedSelfie(_ sender: UITapGestureRecognizer) {
+        // get the location (x,y) position on our tableView where we have clicked
+        let tapLocation = sender.location(in: tableView)
+        
+        // based on the x, y position we can get the indexPath for where we are at
+        if let indexPathAtTapLocation = tableView.indexPathForRow(at: tapLocation){
+            
+            // based on the indexPath we can get the specific cell that is being tapped
+            let cell = tableView.cellForRow(at: indexPathAtTapLocation) as! SelfieTableViewCell
+            
+            //run a method on that cell.
+            cell.tapAnimation()
+        }
+    }
+    
     @IBAction func refreshPulled(_ sender: UIRefreshControl) {
         getPosts()
     }
@@ -43,6 +60,7 @@ class FeedTableViewController: UITableViewController, UIImagePickerControllerDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Table view data source
     

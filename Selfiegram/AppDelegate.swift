@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let configuration = ParseClientConfiguration { clientConfiguration in
-            clientConfiguration.applicationId = "vrX$Y29#nBp3&V,P"
-            clientConfiguration.server = "https://fast-crag-22688.herokuapp.com/parse"
+            clientConfiguration.applicationId = "5CDeHX2xNhW11QZXr9AvtBbEQY0lft4jpUuMFt9g"
+            clientConfiguration.server = "https://parse-server-ios-main.herokuapp.com/parse"
         }
         
         Post.registerSubclass()
